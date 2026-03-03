@@ -5,6 +5,7 @@ import Link from 'next/link'
 import RelatedPosts from '@/components/RelatedPosts'
 import TagBadge from '@/components/TagBadge'
 import type { Metadata } from 'next'
+import type { BlogTag } from '@/types' // Changed: Added explicit type import
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -49,9 +50,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const formattedDate = publishedDate
     ? new Date(publishedDate).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
       })
     : null
 
@@ -154,7 +155,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <section className="pb-12 section-padding">
         <div className="section-max-width max-w-4xl">
           <div className="prose-content text-carbon-300 text-lg leading-relaxed space-y-6">
-            {content.split('\n').filter(Boolean).map((paragraph, i) => (
+            {content.split('\n').filter(Boolean).map((paragraph: string, i: number) => ( // Changed: Added explicit types for paragraph and i
               <p key={i}>{paragraph}</p>
             ))}
           </div>
@@ -166,7 +167,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <section className="pb-12 section-padding">
           <div className="section-max-width max-w-4xl">
             <div className="flex flex-wrap gap-2 pt-8 border-t border-carbon-800/50">
-              {tags.map((tag) => (
+              {tags.map((tag: BlogTag) => ( // Changed: Added explicit type for tag
                 <TagBadge key={tag.id} tag={tag} size="md" />
               ))}
             </div>

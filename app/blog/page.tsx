@@ -3,6 +3,7 @@ import BlogCard from '@/components/BlogCard'
 import Pagination from '@/components/Pagination'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import type { BlogCategory, BlogPost, BlogTag } from '@/types' // Changed: Added explicit type imports
 
 export const metadata: Metadata = {
   title: 'Blog | Sports Car Gallery',
@@ -54,7 +55,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               >
                 All Posts
               </Link>
-              {categories.map((cat) => (
+              {categories.map((cat: BlogCategory) => ( // Changed: Added explicit type for cat
                 <Link
                   key={cat.id}
                   href={`/blog/category/${cat.slug}`}
@@ -74,7 +75,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           {posts.length > 0 ? (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {posts.map((post, index) => (
+                {posts.map((post: BlogPost, index: number) => ( // Changed: Added explicit types for post and index
                   <BlogCard key={post.id} post={post} index={index} />
                 ))}
               </div>
@@ -101,7 +102,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             <div className="mt-16 pt-12 border-t border-carbon-800/50">
               <h3 className="text-lg font-semibold text-white mb-4">Popular Tags</h3>
               <div className="flex flex-wrap gap-2">
-                {tags.map((tag) => (
+                {tags.map((tag: BlogTag) => ( // Changed: Added explicit type for tag
                   <Link
                     key={tag.id}
                     href={`/blog/tag/${tag.slug}`}
