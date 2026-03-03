@@ -79,4 +79,13 @@
     backdrop-filter: blur(12px);
     border: 1px solid rgba(65, 65, 75, 0.3);
   }
+
+  /* Blog prose content styling */
+  .prose-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content p:last-child {
+    margin-bottom: 0;
+  }
 }

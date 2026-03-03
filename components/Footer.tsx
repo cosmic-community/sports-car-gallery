@@ -3,6 +3,7 @@ import Link from 'next/link'
 const footerLinks = [
   { href: '/gallery', label: 'Gallery' },
   { href: '/collections', label: 'Collections' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
   { href: '/testimonials', label: 'Testimonials' },
 ]

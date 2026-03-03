@@ -51,3 +51,67 @@ export interface Testimonial extends CosmicObject {
     avatar?: CosmicMedia;
   };
 }
+
+// Changed: Merged all blog types from types/index.ts into this file to resolve module resolution conflict
+
+export interface CosmicImage {
+  url: string
+  imgix_url: string
+}
+
+export interface BlogAuthor {
+  id: string
+  title: string
+  slug: string
+  metadata: {
+    bio?: string
+    avatar?: CosmicImage
+    role?: string
+    website?: string
+    twitter?: string
+  }
+  created_at: string
+}
+
+export interface BlogCategory {
+  id: string
+  title: string
+  slug: string
+  metadata: {
+    description?: string
+    color?: string
+  }
+  created_at: string
+}
+
+export interface BlogTag {
+  id: string
+  title: string
+  slug: string
+  metadata: {
+    description?: string
+  }
+  created_at: string
+}
+
+export interface BlogPost {
+  id: string
+  title: string
+  slug: string
+  metadata: {
+    excerpt?: string
+    content?: string
+    featured_image?: CosmicImage
+    author?: BlogAuthor
+    category?: BlogCategory
+    tags?: BlogTag[]
+    published_date?: string
+    read_time?: string
+  }
+  created_at: string
+}
+
+export interface PaginatedResponse<T> {
+  objects: T[]
+  total: number
+}
