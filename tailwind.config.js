@@ -21,17 +21,17 @@ module.exports = {
           950: '#18181b',
         },
         racing: {
-          DEFAULT: '#dc2626',
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
+          DEFAULT: '#9333ea', // Changed: red #dc2626 → purple
+          50: '#faf5ff', // Changed: red tint → purple tint
+          100: '#f3e8ff', // Changed: red tint → purple tint
+          200: '#e9d5ff', // Changed: red tint → purple tint
+          300: '#d8b4fe', // Changed: red tint → purple tint
+          400: '#c084fc', // Changed: red → purple
+          500: '#a855f7', // Changed: red → purple
+          600: '#9333ea', // Changed: red #dc2626 → purple
+          700: '#7e22ce', // Changed: red #b91c1c → purple
+          800: '#6b21a8', // Changed: red #991b1b → purple
+          900: '#581c87', // Changed: red #7f1d1d → purple
         },
       },
       fontFamily: {
