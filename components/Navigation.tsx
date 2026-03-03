@@ -36,7 +36,7 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-[#0a0a0b]/90 backdrop-blur-xl border-b border-carbon-800/50'
-          : 'bg-transparent'
+          : 'bg-gradient-to-b from-[#0a0a0b]/80 via-[#0a0a0b]/40 to-transparent'
       }`}
     >
       <nav className="section-max-width section-padding">
@@ -62,7 +62,7 @@ export default function Navigation() {
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? 'text-white bg-carbon-800/80'
-                      : 'text-carbon-400 hover:text-white hover:bg-carbon-800/40'
+                      : 'text-carbon-300 hover:text-white hover:bg-carbon-800/40'
                   }`}
                 >
                   {link.label}
