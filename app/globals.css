@@ -17,7 +17,7 @@
   }
 
   ::selection {
-    background-color: rgba(220, 38, 38, 0.3);
+    background-color: rgba(22, 163, 74, 0.3); /* Changed: from red rgba(220, 38, 38, 0.3) to green */
     color: #ffffff;
   }
 
