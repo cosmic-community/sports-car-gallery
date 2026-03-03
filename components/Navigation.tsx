@@ -18,6 +18,10 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
 
+  // Changed: Only the home page gets the transparent-to-solid scroll behavior
+  // All other pages always show a solid nav background for visibility
+  const isHomePage = pathname === '/'
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -31,13 +35,16 @@ export default function Navigation() {
     setIsOpen(false)
   }, [pathname])
 
+  // Changed: Determine background class based on page and scroll state
+  // On home page: transparent initially, solid on scroll
+  // On all other pages: always solid background so nav is visible
+  const headerBg = isHomePage && !isScrolled
+    ? 'bg-[#0a0a0b]/80 backdrop-blur-md'
+    : 'bg-[#0a0a0b]/90 backdrop-blur-xl border-b border-carbon-800/50'
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#0a0a0b]/90 backdrop-blur-xl border-b border-carbon-800/50'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}
     >
       <nav className="section-max-width section-padding">
         <div className="flex items-center justify-between h-16 md:h-20">

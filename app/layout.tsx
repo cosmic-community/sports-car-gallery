@@ -33,7 +33,8 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased min-h-screen bg-[#0a0a0b] text-carbon-100">
         <Navigation />
-        <main className="min-h-screen">
+        {/* Changed: Added pt-16 md:pt-20 to account for the fixed navigation header height */}
+        <main className="min-h-screen pt-16 md:pt-20">
           {children}
         </main>
         <Footer />

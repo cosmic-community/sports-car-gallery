@@ -10,7 +10,10 @@ export default function HeroSection({ photo, about }: HeroSectionProps) {
   const imageUrl = photo?.metadata?.image?.imgix_url
 
   return (
-    <section className="relative h-screen min-h-[600px] max-h-[1000px] flex items-end overflow-hidden">
+    // Changed: Added negative top margin to pull hero behind the nav, compensating for the
+    // pt-16 md:pt-20 added to <main> in layout.tsx. This lets the hero remain full-bleed
+    // while all other pages get proper spacing below the fixed nav.
+    <section className="relative h-screen min-h-[600px] max-h-[1000px] flex items-end overflow-hidden -mt-16 md:-mt-20">
       {/* Background Image */}
       {imageUrl ? (
         <img
